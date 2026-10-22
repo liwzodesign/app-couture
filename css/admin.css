@@ -1,0 +1,132 @@
+/* Styles pour la page admin */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #222;
+}
+
+#logout-btn {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#logout-btn:hover {
+  background-color: #e74c3c;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Formulaire ajout création */
+#add-creation-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+#add-creation-form input[type="text"],
+#add-creation-form input[type="number"],
+#add-creation-form input[type="url"],
+#add-creation-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  resize: vertical;
+}
+
+#add-creation-form button {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#add-creation-form button:hover {
+  background-color: #3498db;
+}
+
+#creation-message {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+/* Gestion des commandes */
+#orders-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.order-item {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+.order-item p {
+  margin: 5px 0;
+}
+
+.update-status-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.update-status-btn:hover {
+  background-color: #2ecc71;
+}

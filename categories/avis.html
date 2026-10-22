@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Avis clients - Couturier Créatif"/>
+  <title>Avis clients - Couturier Créatif</title>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/category.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="/assets/images/logo.png" alt="Couturier Créatif Logo" class="logo-img"/>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/" >Accueil</a></li>
+          <li><a href="/categories/homme.html">Homme</a></li>
+          <li><a href="/categories/femme.html">Femme</a></li>
+          <li><a href="/categories/catalogue.html">Catalogue</a></li>
+          <li><a href="/categories/panier.html">Panier</a></li>
+          <li><a href="/categories/product-detail.html">Détail produit</a></li>
+          <li><a href="/categories/avis.html" class="active">Avis clients</a></li>
+          <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li id="admin-link" style="display:none;"><a href="/admin.html">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="reviews-section">
+      <h1>Avis clients</h1>
+      <p>Découvrez les témoignages de nos clients satisfaits et partagez votre expérience.</p>
+
+      <div id="reviews-list" class="reviews-list" aria-live="polite" aria-atomic="true">
+        <!-- Avis clients affichés ici -->
+      </div>
+
+      <section class="review-form-section">
+        <h2>Laissez un avis</h2>
+        <form id="review-form" class="review-form" aria-label="Formulaire de dépôt d'avis client">
+          <div class="form-group">
+            <label for="review-name">Nom complet</label>
+            <input type="text" id="review-name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="review-rating">Note</label>
+            <select id="review-rating" name="rating" required>
+              <option value="">Sélectionnez une note</option>
+              <option value="5">5 étoiles</option>
+              <option value="4">4 étoiles</option>
+              <option value="3">3 étoiles</option>
+              <option value="2">2 étoiles</option>
+              <option value="1">1 étoile</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="review-comment">Commentaire</label>
+            <textarea id="review-comment" name="comment" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Envoyer l'avis</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Couturier Créatif</h3>
+        <p>Créations sur mesure et prêt-à-porter de qualité depuis 2020.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens rapides</h3>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/categories/homme.html">Homme</a></li>
+          <li><a href="/categories/femme.html">Femme</a></li>
+          <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Rue de la Mode, Dakar</p>
+        <p><i class="fas fa-phone"></i> +221 77 123 45 67</p>
+        <p><i class="fas fa-envelope"></i> contact@couturiercréatif.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Couturier Créatif. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/avis.js"></script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

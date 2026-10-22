@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vous êtes hors ligne - Couturier Créatif">
+  <title>Hors ligne - Couturier Créatif</title>
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    :root {
+      --color-primary: #333333;
+      --color-secondary: #F8F5F0;
+      --color-accent: #D4AF37;
+      --font-heading: 'Georgia', serif;
+      --font-body: 'Arial', sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      height: 100%;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-secondary);
+      color: var(--color-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .offline-container {
+      max-width: 500px;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    
+    .icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      color: var(--color-accent);
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--color-primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: #444;
+    }
+    
+    .cached-pages {
+      margin-top: 2rem;
+      width: 100%;
+    }
+    
+    .cached-pages h2 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cached-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .cached-link {
+      padding: 0.75rem;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--color-primary);
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    
+    .cached-link:hover {
+      background-color: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-container">
+    <div class="icon">📶</div>
+    <h1>Vous êtes hors ligne</h1>
+    <p>Impossible de se connecter à internet. Vérifiez votre connexion et réessayez.</p>
+    <p>Vous pouvez toujours accéder aux pages déjà visitées.</p>
+    <button class="btn" onclick="window.location.reload()">Réessayer</button>
+    
+    <div class="cached-pages">
+      <h2>Pages disponibles hors ligne</h2>
+      <div class="cached-links">
+        <a href="/" class="cached-link">Accueil</a>
+        <a href="/categories/homme.html" class="cached-link">Collection Homme</a>
+        <a href="/categories/femme.html" class="cached-link">Collection Femme</a>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Try to load cached pages when the user is offline
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hide the cached links section by default
+      const cachedPagesSection = document.querySelector('.cached-pages');
+      cachedPagesSection.style.display = 'none';
+      
+      // Only show cached links if service worker is supported
+      if ('serviceWorker' in navigator && 'caches' in window) {
+        caches.open('couturier-creative-v1').then(function(cache) {
+          if (cache) {
+            cache.keys().then(function(keys) {
+              // If there are cached pages, show the section
+              if (keys.length > 0) {
+                cachedPagesSection.style.display = 'block';
+                
+                // Collect unique URLs of HTML pages
+                const htmlUrls = new Set();
+                keys.forEach(function(request) {
+                  const url = new URL(request.url);
+                  
+                  // Only include HTML pages that aren't the offline page itself
+                  if (request.url.endsWith('.html') && !request.url.includes('offline.html')) {
+                    let pageName = url.pathname;
+                    if (pageName === '/') pageName = '/index.html';
+                    
+                    htmlUrls.add(pageName);
+                  }
+                });
+                
+                // Only display if we have cached HTML pages
+                if (htmlUrls.size > 0) {
+                  const cachedLinksContainer = document.querySelector('.cached-links');
+                  cachedLinksContainer.innerHTML = '';
+                  
+                  // Add links for cached pages
+                  htmlUrls.forEach(function(url) {
+                    let linkText;
+                    if (url === '/index.html' || url === '/') {
+                      linkText = 'Accueil';
+                    } else if (url.includes('homme')) {
+                      linkText = 'Collection Homme';
+                    } else if (url.includes('femme')) {
+                      linkText = 'Collection Femme';
+                    } else if (url.includes('sur-mesure')) {
+                      linkText = 'Sur-mesure';
+                    } else if (url.includes('contact')) {
+                      linkText = 'Contact';
+                    } else {
+                      linkText = url.replace('.html', '').replace('/', '');
+                      linkText = linkText.charAt(0).toUpperCase() + linkText.slice(1);
+                    }
+                    
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.className = 'cached-link';
+                    link.textContent = linkText;
+                    cachedLinksContainer.appendChild(link);
+                  });
+                } else {
+                  cachedPagesSection.style.display = 'none';
+                }
+              }
+            });
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

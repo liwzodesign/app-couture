@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Panier d'achat - Couturier Créatif"/>
+  <title>Panier - Couturier Créatif</title>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/category.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="/assets/images/logo.png" alt="Couturier Créatif Logo" class="logo-img"/>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/" >Accueil</a></li>
+          <li><a href="/categories/homme.html">Homme</a></li>
+          <li><a href="/categories/femme.html">Femme</a></li>
+          <li><a href="/categories/catalogue.html">Catalogue</a></li>
+          <li><a href="/categories/panier.html" class="active">Panier</a></li>
+          <li><a href="/categories/product-detail.html">Détail produit</a></li>
+          <li><a href="/categories/avis.html">Avis</a></li>
+          <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li id="admin-link" style="display:none;"><a href="/admin.html">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="cart-section">
+      <h1>Votre panier</h1>
+      <div id="cart-container" class="cart-container" aria-live="polite" aria-atomic="true">
+        <!-- Contenu du panier affiché ici -->
+      </div>
+      <div class="cart-actions">
+        <button id="clear-cart" class="btn btn-secondary">Vider le panier</button>
+        <button id="checkout" class="btn btn-primary">Passer à la caisse</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Couturier Créatif</h3>
+        <p>Créations sur mesure et prêt-à-porter de qualité depuis 2020.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens rapides</h3>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/categories/homme.html">Homme</a></li>
+          <li><a href="/categories/femme.html">Femme</a></li>
+          <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Rue de la Mode, Dakar</p>
+        <p><i class="fas fa-phone"></i> +221 77 123 45 67</p>
+        <p><i class="fas fa-envelope"></i> contact@couturiercréatif.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Couturier Créatif. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/cart.js"></script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

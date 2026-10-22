@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Couturier Créatif - Prenez rendez-vous ou demandez un devis">
+  <title>Contact - Couturier Créatif</title>
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/contact.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="/assets/images/logo.png" alt="Couturier Créatif Logo" class="logo-img">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/categories/homme.html">Homme</a></li>
+          <li><a href="/categories/femme.html">Femme</a></li>
+          <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+          <li><a href="/contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-banner">
+      <div class="contact-banner-content">
+        <h1>Contactez-nous</h1>
+        <p>Une question, une commande ou un rendez-vous ? Nous sommes à votre écoute.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Informations de contact</h2>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Adresse</h3>
+                <p>123 Rue de la Mode<br>Dakar, Sénégal</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h3>Téléphone</h3>
+                <p>+221 77 123 45 67</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>Email</h3>
+                <p>contact@couturiercréatif.com</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h3>Horaires d'ouverture</h3>
+                <p>Lundi - Vendredi: 9h - 18h<br>Samedi: 9h - 16h<br>Dimanche: Fermé</p>
+              </div>
+            </div>
+            <div class="social-links-container">
+              <h3>Suivez-nous</h3>
+              <div class="social-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form-container">
+            <h2>Envoyez-nous un message</h2>
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="name">Nom complet</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+              <div class="form-group">
+                <label for="subject">Sujet</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Sélectionnez un sujet</option>
+                  <option value="devis">Demande de devis</option>
+                  <option value="rendez-vous">Prise de rendez-vous</option>
+                  <option value="info">Demande d'informations</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Envoyer le message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15436.03800053908!2d-17.44411354999999!3d14.6904218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1725963b4e7c9%3A0xc78c7d7c5cf45ad!2sDakar%2C%20Senegal!5e0!3m2!1sen!2s!4v1637089073276!5m2!1sen!2s"
+          allowfullscreen=""
+          loading="lazy"
+          title="Localisation de Couturier Créatif"
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Questions fréquemment posées</h2>
+          <p>Trouvez rapidement des réponses à vos questions</p>
+        </div>
+        
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question">
+              Comment prendre mes mesures pour une création sur mesure ?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Vous pouvez soit venir en boutique pour une prise de mesures professionnelle (recommandé), soit suivre notre guide de prise de mesures disponible en téléchargement. Pour des résultats optimaux, nous recommandons toujours une prise de mesures en personne.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              Quel est le délai de confection pour une commande sur mesure ?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Le délai standard est de 2 à 3 semaines pour les pièces simples et de 4 à 6 semaines pour les créations plus complexes (costumes, robes de cérémonie). Ces délais peuvent varier en période de forte demande. Un délai express est possible avec supplément.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              Comment se déroule un rendez-vous pour une création sur mesure ?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Le rendez-vous se déroule en plusieurs étapes : discussion de votre projet, sélection des tissus et matériaux, prise de mesures, et définition des détails stylistiques. Prévoyez environ 1 heure pour ce premier rendez-vous. Des essayages seront ensuite programmés pendant la réalisation.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              Proposez-vous des retouches sur des vêtements achetés ailleurs ?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Oui, nous proposons un service de retouches pour tout type de vêtement, qu'il ait été acheté chez nous ou ailleurs. Le prix dépend de la complexité de la retouche et du type de vêtement. Contactez-nous pour un devis personnalisé.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              Puis-je apporter mon propre tissu pour une création ?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Absolument ! Vous pouvez apporter votre propre tissu et nous nous chargerons de la création. Nous vous conseillerons sur la quantité nécessaire selon le modèle souhaité. Notez que nous ne pouvons garantir le résultat final si le tissu n'est pas adapté au modèle choisi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Couturier Créatif</h3>
+        <p>Créations sur mesure et prêt-à-porter de qualité depuis 2020.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens rapides</h3>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/categories/homme.html">Homme</a></li>
+          <li><a href="/categories/femme.html">Femme</a></li>
+          <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Rue de la Mode, Dakar</p>
+        <p><i class="fas fa-phone"></i> +221 77 123 45 67</p>
+        <p><i class="fas fa-envelope"></i> contact@couturiercréatif.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Couturier Créatif. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/221771234567" class="whatsapp-button" aria-label="Contacter par WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/contact.js"></script>
+</body>
+</html>

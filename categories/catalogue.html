@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Catalogue des créations - Couturier Créatif"/>
+  <title>Catalogue - Couturier Créatif</title>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/category.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="/assets/images/logo.png" alt="Couturier Créatif Logo" class="logo-img"/>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/categories/homme.html">Homme</a></li>
+          <li><a href="/categories/femme.html">Femme</a></li>
+          <li><a href="/categories/catalogue.html" class="active">Catalogue</a></li>
+          <li><a href="/categories/panier.html">Panier</a></li>
+          <li><a href="/categories/product-detail.html">Détail produit</a></li>
+          <li><a href="/categories/avis.html">Avis</a></li>
+          <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li id="admin-link" style="display:none;"><a href="/admin.html">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="catalogue-filters">
+      <h2>Filtres avancés</h2>
+      <form id="filters-form" aria-label="Filtres avancés du catalogue">
+        <div class="filter-group">
+          <label for="filter-price">Prix</label>
+          <select id="filter-price" name="price">
+            <option value="">Tous</option>
+            <option value="0-30000">0 - 30 000 XOF</option>
+            <option value="30001-60000">30 001 - 60 000 XOF</option>
+            <option value="60001-100000">60 001 - 100 000 XOF</option>
+            <option value="100000+">100 000+ XOF</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-type">Type</label>
+          <select id="filter-type" name="type">
+            <option value="">Tous</option>
+            <option value="costume">Costume</option>
+            <option value="chemise">Chemise</option>
+            <option value="pantalon">Pantalon</option>
+            <option value="veste">Veste</option>
+            <option value="robe">Robe</option>
+            <option value="tailleur">Tailleur</option>
+            <option value="blouse">Blouse</option>
+          <option value="jupe">Jupe</option>
+          <option value="pret-a-porter">Prêt-à-porter</option>
+        </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-color">Couleur</label>
+          <select id="filter-color" name="color">
+            <option value="">Toutes</option>
+            <option value="noir">Noir</option>
+            <option value="bleu">Bleu</option>
+            <option value="gris">Gris</option>
+            <option value="blanc">Blanc</option>
+            <option value="rouge">Rouge</option>
+            <option value="beige">Beige</option>
+            <option value="rose pâle">Rose pâle</option>
+            <option value="bleu clair">Bleu clair</option>
+            <option value="bleu marine">Bleu marine</option>
+            <option value="bleu foncé">Bleu foncé</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-fabric">Tissu</label>
+          <select id="filter-fabric" name="fabric">
+            <option value="">Tous</option>
+            <option value="laine">Laine</option>
+            <option value="lin">Lin</option>
+            <option value="coton">Coton</option>
+            <option value="tweed">Tweed</option>
+            <option value="soie">Soie</option>
+            <option value="polyester">Polyester</option>
+            <option value="mousseline">Mousseline</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-gender">Genre</label>
+          <select id="filter-gender" name="gender">
+            <option value="">Tous</option>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Appliquer les filtres</button>
+        <button type="button" id="reset-filters" class="btn btn-secondary">Réinitialiser</button>
+      </form>
+    </section>
+
+    <section class="catalogue-products">
+      <h2>Produits</h2>
+      <div id="products-container" class="products-container" aria-live="polite" aria-atomic="true">
+        <!-- Les produits filtrés seront affichés ici -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Couturier Créatif</h3>
+        <p>Créations sur mesure et prêt-à-porter de qualité depuis 2020.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens rapides</h3>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/categories/homme.html">Homme</a></li>
+          <li><a href="/categories/femme.html">Femme</a></li>
+          <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Rue de la Mode, Dakar</p>
+        <p><i class="fas fa-phone"></i> +221 77 123 45 67</p>
+        <p><i class="fas fa-envelope"></i> contact@couturiercréatif.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Couturier Créatif. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/catalogue.js"></script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Collection Femme - Couturier Créatif. Vêtements sur mesure et prêt-à-porter">
+  <title>Collection Femme - Couturier Créatif</title>
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/category.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header id="app-header">
+    <div class="header-container">
+      <div class="logo-container">
+        <a href="/">
+          <img src="/assets/images/logo.png" alt="Couturier Créatif Logo" class="logo-img">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/categories/homme.html">Homme</a></li>
+          <li><a href="/categories/femme.html" class="active">Femme</a></li>
+          <li><a href="/categories/catalogue.html">Catalogue</a></li>
+          <li><a href="/categories/panier.html">Panier</a></li>
+          <li><a href="/categories/product-detail.html">Détail produit</a></li>
+          <li><a href="/categories/avis.html">Avis</a></li>
+          <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li id="admin-link" style="display:none;"><a href="/admin.html">Admin</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="category-banner">
+      <div class="category-banner-content">
+        <h1>Collection Femme</h1>
+        <p>Des pièces uniques pour une allure incomparable</p>
+      </div>
+    </section>
+
+    <section class="product-filter-section">
+      <div class="container">
+        <div class="filter-container">
+          <div class="search-box">
+            <input type="text" id="search-input" placeholder="Rechercher...">
+            <button id="search-btn" aria-label="Rechercher">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          
+          <div class="filter-options">
+            <div class="filter-group">
+              <label for="type-filter">Type</label>
+              <select id="type-filter">
+                <option value="">Tous les types</option>
+                <option value="robe">Robes</option>
+                <option value="tailleur">Tailleurs</option>
+                <option value="blouse">Blouses</option>
+                <option value="jupe">Jupes</option>
+                <option value="accessoire">Accessoires</option>
+              </select>
+            </div>
+            
+            <div class="filter-group">
+              <label for="price-filter">Prix</label>
+              <select id="price-filter">
+                <option value="">Tous les prix</option>
+                <option value="0-25000">Moins de 25 000 CFA</option>
+                <option value="25000-50000">25 000 - 50 000 CFA</option>
+                <option value="50000-100000">50 000 - 100 000 CFA</option>
+                <option value="100000+">Plus de 100 000 CFA</option>
+              </select>
+            </div>
+            
+            <div class="filter-group">
+              <label for="color-filter">Couleur</label>
+              <select id="color-filter">
+                <option value="">Toutes les couleurs</option>
+                <option value="noir">Noir</option>
+                <option value="rouge">Rouge</option>
+                <option value="bleu">Bleu</option>
+                <option value="blanc">Blanc</option>
+                <option value="rose">Rose</option>
+              </select>
+            </div>
+            
+            <div class="filter-group">
+              <label for="sort-by">Trier par</label>
+              <select id="sort-by">
+                <option value="newest">Plus récents</option>
+                <option value="price-low">Prix croissant</option>
+                <option value="price-high">Prix décroissant</option>
+                <option value="name-asc">Nom (A-Z)</option>
+                <option value="name-desc">Nom (Z-A)</option>
+              </select>
+            </div>
+          </div>
+          
+          <button class="filter-toggle-btn" aria-label="Afficher/Masquer les filtres">
+            <span>Filtres</span>
+            <i class="fas fa-sliders-h"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="container">
+        <div class="products-grid" id="products-container">
+          <article class="product-card">
+            <a href="/categories/product-detail.html?id=4">
+              <img src="/assets/images/Robe de soirée en soie.jpg" alt="Robe Femme Élégante" />
+              <h3>Robe Femme Élégante</h3>
+            </a>
+            <p>Robe longue en soie, parfaite pour les occasions spéciales.</p>
+            <p class="price">65 000 CFA</p>
+            <button class="btn btn-primary add-to-cart" data-product-id="4">Ajouter au panier</button>
+          </article>
+          <article class="product-card">
+            <a href="/categories/product-detail.html?id=5">
+              <img src="/assets/images/Blouse en mousseline.jpg" alt="Blouse Femme Chic" />
+              <h3>Blouse Femme Chic</h3>
+            </a>
+            <p>Blouse légère et confortable, idéale pour le bureau.</p>
+            <p class="price">20 000 CFA</p>
+            <button class="btn btn-primary add-to-cart" data-product-id="5">Ajouter au panier</button>
+          </article>
+          <article class="product-card">
+            <a href="/categories/product-detail.html?id=6">
+              <img src="/assets/images/Jupe crayon en laine.jpg" alt="Jupe Femme Plissée" />
+              <h3>Jupe Femme Plissée</h3>
+            </a>
+            <p>Jupe plissée élégante, parfaite pour un look décontracté.</p>
+            <p class="price">28 000 CFA</p>
+            <button class="btn btn-primary add-to-cart" data-product-id="6">Ajouter au panier</button>
+          </article>
+        </div>
+        
+        <div class="pagination">
+          <button class="page-link prev-page" aria-label="Page précédente">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="page-numbers">
+            <span class="page-number active">1</span>
+            <span class="page-number">2</span>
+            <span class="page-number">3</span>
+          </div>
+          <button class="page-link next-page" aria-label="Page suivante">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Couturier Créatif</h3>
+        <p>Créations sur mesure et prêt-à-porter de qualité depuis 2020.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens rapides</h3>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/categories/homme.html">Homme</a></li>
+          <li><a href="/categories/femme.html">Femme</a></li>
+          <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Rue de la Mode, Dakar</p>
+        <p><i class="fas fa-phone"></i> +221 77 123 45 67</p>
+        <p><i class="fas fa-envelope"></i> contact@couturiercréatif.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <div class="social-links">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Couturier Créatif. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/221771234567" class="whatsapp-button" aria-label="Contacter par WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/category.js"></script>
+  <script type="module">
+    import { addToCart } from '/js/cart.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.add-to-cart');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const productCard = button.closest('.product-card');
+          const product = {
+            id: button.getAttribute('data-product-id'),
+            name: productCard.querySelector('h3').textContent,
+            price: parseFloat(productCard.querySelector('.price').textContent.replace(/\s|CFA/g, '')),
+            image: productCard.querySelector('img').src
+          };
+          addToCart(product);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

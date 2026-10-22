@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Couturier Créatif</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/admin.css" />
+  <script type="module" src="/js/firebase-admin.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Interface Admin - Couturier Créatif</h1>
+    <button id="logout-btn" style="display:none;">Se déconnecter</button>
+  </header>
+
+  <nav class="main-nav">
+    <button class="menu-toggle" aria-label="Toggle navigation menu">
+      <span class="hamburger"></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Accueil</a></li>
+      <li><a href="/categories/homme.html">Homme</a></li>
+      <li><a href="/categories/femme.html">Femme</a></li>
+      <li><a href="/categories/catalogue.html">Catalogue</a></li>
+      <li><a href="/categories/panier.html">Panier</a></li>
+      <li><a href="/categories/product-detail.html">Détail produit</a></li>
+      <li><a href="/categories/avis.html">Avis</a></li>
+      <li><a href="/sur-mesure.html">Sur-mesure</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li id="admin-link" style="display:none;"><a href="/admin.html">Admin</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="add-creation-section">
+      <h2>Ajouter une nouvelle création</h2>
+      <form id="add-creation-form" aria-label="Formulaire d'ajout de création">
+        <label for="creation-name">Nom de la création</label>
+        <input type="text" id="creation-name" name="name" required />
+
+        <label for="creation-description">Description</label>
+        <textarea id="creation-description" name="description" required></textarea>
+
+        <label for="creation-price">Prix (XOF)</label>
+        <input type="number" id="creation-price" name="price" required min="0" />
+
+        <label for="creation-image">URL de l'image</label>
+        <input type="url" id="creation-image" name="imageUrl" required />
+
+        <button type="submit">Ajouter la création</button>
+      </form>
+      <div id="creation-message" role="alert" aria-live="polite"></div>
+    </section>
+
+    <section id="order-management-section">
+      <h2>Gestion des commandes</h2>
+      <div id="orders-list">
+        <!-- Orders will be loaded here -->
+      </div>
+    </section>
+  </main>
+</body>
+</html>
